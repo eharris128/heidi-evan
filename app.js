@@ -137,7 +137,7 @@
 
 //HOF 4
 
-// let turtleMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
+let turtleMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 
 // function checkIfNegative(move) {
 //   for (let i = 0; i < move.length; i++) {
@@ -149,4 +149,32 @@
 // }
 
 // console.log(turtleMoves.filter(checkIfNegative));
+
+
+function addSteps(move) {
+  let distance = 0;
+  for (let i = 0; i <move.length; i++) {
+    //console.log(move[i]);
+    distance += move[i];
+    console.log(distance);
+  }
+  return distance;
+}
+
+console.log(turtleMoves.map(addSteps));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

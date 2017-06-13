@@ -31,3 +31,33 @@ function average(numbers) {
   }
   return sum/numbers.length;
 }
+
+//FizzBuzz
+
+function fizzBuzz(countTo) {
+  var array = [];
+  for (var i = 1; i < countTo; i++) {
+    switch(true) {
+      case i % 3 === 0:
+        array.push("fizz");
+        break;
+      case i % 5 === 0:
+        array.push("buzz");
+        break;
+      case i % 15 === 0:
+        array.push('fizzbuzz');
+        break;
+      default:
+        array.push(i);
+        break;
+    }
+  }
+  console.log(array);
+}
+
+
+fizzBuzz(15);
+
+
+
+

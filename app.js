@@ -114,3 +114,29 @@ filter(myNames, function(name) {
     }
   }
 });
+
+
+//HOF 3
+
+function hazardWarningCreator(typeOfWarning) {
+  let warningCounter = 0;
+  return function (location) {
+    warningCounter++;
+    console.log(`DANGER! There is a ${typeOfWarning} hazard at ${location}!`);
+    console.log(`The ${typeOfWarning} hazard alert has triggered ${warningCounter} time(s) today.`);
+  }
+}
+
+const rocksWarning = hazardWarningCreator('Rocks on the road');
+const flyingPigWarning = hazardWarningCreator('Flying pigs');
+const polarIceCapMeltWarning = hazardWarningCreator('Polar ice cap melt')
+
+rocksWarning("Himalayas");
+flyingPigWarning("Atlantis");
+polarIceCapMeltWarning("Florida");
+
+
+
+
+
+

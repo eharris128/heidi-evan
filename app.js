@@ -58,6 +58,31 @@ function fizzBuzz(countTo) {
 
 fizzBuzz(15);
 
+//HOF 1
+
+function repeat(fn, n) {
+  var i = 0;
+  while(i < n) {
+    i++;
+    fn();
+  }
+}
+
+function hello() {
+  console.log("Hello World");
+}
+
+function goodbye() {
+  console.log("Goodbye world");
+}
+
+repeat(hello, 5);
+repeat(goodbye, 5);
+
+
+
+
+
 
 
 

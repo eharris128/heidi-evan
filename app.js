@@ -37,13 +37,18 @@ function average(numbers) {
 function fizzBuzz(countTo) {
   var array = [];
   for (var i = 1; i < countTo; i++) {
+    //Alternative approach outlined in comments: 
+    //switch (i % 15)
     switch(true) {
+      //case 3 , 6 , 9 , 12 array.push('fizz')
       case i % 3 === 0:
         array.push("fizz");
         break;
+      //case 5 , 10 array,push('buzz')
       case i % 5 === 0:
         array.push("buzz");
         break;
+      //case 0 array.push('fizzbuzz')
       case i % 15 === 0:
         array.push('fizzbuzz');
         break;
@@ -79,10 +84,33 @@ function goodbye() {
 repeat(hello, 5);
 repeat(goodbye, 5);
 
+//HOF 2
 
+// Return only names that begin with 'R'
+const myNames = ['Rich', 'Joe', 'Bhaumik', 'Ray'];
 
+const filteredNames = filter(myNames, function(name) {
+    // This is a "predicate function" - it's a function that only returns a boolean
+    return name[0] === 'R';
+});
 
+console.log(filteredNames) // => ['Rich', 'Ray']
 
+// TASK -- DEFINE YOUR FILTER FUNCTION BELOW:
+function filter(arr, fn) {
+  let newArray = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (fn(arr[i]) === true) {
+      newArray.push(arr[i]);
+    }
+  }
+  return newArray;
+}
 
-
-
+filter(myNames, function(name) {
+  for (let i = 0; i < name.length; i++) {
+    if (name[i] === 'a') {
+    return true;
+    }
+  }
+});

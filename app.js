@@ -151,30 +151,44 @@ let turtleMoves = [[0, 0], [0, 5], [-1, -3], [-3, 1], [2, -4], [3, 2]];
 // console.log(turtleMoves.filter(checkIfNegative));
 
 
-function addSteps(move) {
-  let distance = 0;
-  for (let i = 0; i <move.length; i++) {
-    //console.log(move[i]);
-    distance += move[i];
-    console.log(distance);
-  }
-  return distance;
+// function addSteps(move) {
+//   let distance = 0;
+//   for (let i = 0; i <move.length; i++) {
+//     //console.log(move[i]);
+//     distance += move[i];
+//     console.log(distance);
+//   }
+//   return distance;
+// }
+
+// console.log(turtleMoves.map(addSteps));
+
+// function makePositive(move,i,turtleMoves) {
+//   // Math.abs(-7.25) => 7.25
+//   let steps = 0;
+//   for (let i = 0; i < move.length; i++) {
+//     steps += move[i];
+//     console.log(steps);
+//   }
+//   return steps;
+// }
+
+// console.log(turtleMoves.forEach(makePositive));
+
+function calculateSteps(move,i, arr) {
+  // Math.abs(-7.25) => 7.25
+  let totalSteps = [];
+  for (let k = 0; k < move.length; k++) {
+    move[k] = Math.abs(move[k]);
+      }
+  move = move.reduce(function(total, step) {
+  return total + step;
+  });
+  totalSteps.push(move);
+  console.log(totalSteps);
+    // console.log(move);
+  return move;
 }
 
-console.log(turtleMoves.map(addSteps));
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(turtleMoves.forEach(calculateSteps));
